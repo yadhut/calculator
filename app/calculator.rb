@@ -12,6 +12,11 @@ class Calculator
       end
 
       values = input.split(delimiter).map(&:to_i)
+      negatives = values.select { |n| n < 0 }
+      unless negatives.empty?
+        raise "negatives not allowed: #{negatives.join(', ')}"
+      end
+
       values.sum
     end
   end
@@ -22,3 +27,4 @@ puts Calculator.add("3")
 puts Calculator.add("5,3")
 puts Calculator.add("5\n2,1")
 puts Calculator.add("//;\n1;2")
+# puts Calculator.add("1,-2")
