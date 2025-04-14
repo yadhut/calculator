@@ -17,6 +17,8 @@ class Calculator
   end
 end
 
-
-
-  
+puts Calculator.add("")
+puts Calculator.add("3")
+puts Calculator.add("5,3")
+puts Calculator.add("5\n2,1")
+puts Calculator.add("//;\n1;2")
